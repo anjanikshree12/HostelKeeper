@@ -156,6 +156,9 @@ app.get("/profile",function(req,res){
 app.get("/Logout",function(req,res){
   res.render("home");
 });
+app.get("/second",function(req,res){
+  res.render("second");
+});
 app.listen(3000,function(){
     console.log("Server started on port 3000");
 });
