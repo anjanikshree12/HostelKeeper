@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Hostel Keeper</title>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html" id="topone">Hostel Keeper</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Admin
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal3">Sign In</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">Sign Up</a>
+                  <div class="dropdown-divider"></div>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  User
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal4">Sign In</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal2">Sign Up</a>
+                  <div class="dropdown-divider"></div>
+                </div>
+              </li>
+             <li class="nav-item">
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search for your City" aria-label="Search for your city">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+              </form>
+             </li>
+              <!--Modal of User Sign In-->
+              <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">User Sign In</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group row">
+                          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                          <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                          <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword3">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-sm-10 offset-sm-2">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="gridCheck1">
+                              <label class="form-check-label" for="gridCheck1">
+                                Remember me
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary"> <a href="second.html" class="text-white">Sign In</a> </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Modal of Admin Sign In-->
+              <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Admin Sign In</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group row">
+                          <label for="inputEmail3" class="col-sm-2 col-form-label">Admin Email</label>
+                          <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                          <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword3">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="inputEmail3" class="col-sm-2 col-form-label">Admin Mobile No.</label>
+                          <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-sm-10 offset-sm-2">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="gridCheck1">
+                              <label class="form-check-label" for="gridCheck1">
+                                Remember me
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary"><a href="admin.html" class="text-white">Sign In</a> </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Modal of User Sign up-->
+              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">User Sign Up here.</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">First name</label>
+                            <input type="text" class="form-control" id="validationDefault01"  required>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault02">Last name</label>
+                            <input type="text" class="form-control" id="validationDefault02">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">Mobile Number</label>
+                            <input type="text" class="form-control" id="validationDefault01"  required>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault02">Email Id</label>
+                            <input type="text" class="form-control" id="validationDefault02"  required>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                            <label class="form-check-label" for="invalidCheck2">
+                              Agree to terms and conditions
+                            </label>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <!--Modal of Admin Sign Up-->
+               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Admin Sign Up here.</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">First name</label>
+                            <input type="text" class="form-control" id="validationDefault01" required>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault02">Last name</label>
+                            <input type="text" class="form-control" id="validationDefault02">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">Mobile Number</label>
+                            <input type="text" class="form-control" id="validationDefault01"  required>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault02">Email Id</label>
+                            <input type="text" class="form-control" id="validationDefault02"  required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col-md-4 mb-3">
+                            <label for="validationDefault03">City</label>
+                            <input type="text" class="form-control" id="validationDefault03" required>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationDefault04">State</label>
+                            <select class="custom-select" id="validationDefault04" required>
+                              <option selected disabled value="">Choose...</option>
+                              <option>...</option>
+                            </select>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationDefault05">Zip</label>
+                            <input type="text" class="form-control" id="validationDefault05" required>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                            <label class="form-check-label" for="invalidCheck2">
+                              Agree to terms and conditions
+                            </label>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+      <!--Jumbotron-->
+      <div class="jumbotron align-items-center text-center">
+        <h1 class="display-4">Hire Hostelkeepers in Your Area !</h1>
+        <p class="lead">Someone out there loves cleaning Rooms as much as you hate doing them. Hire a one-time or recurring cleaning service today.</p>
+        <hr class="my-4">
+        <a class="btn btn-success btn-lg" href="#"> Find my Hostel Keeper</a>
+        <p class="lead mt-2">Are you looking for a hostelkeeping job? Apply Now.</p>
+      </div>
+      <!--After Jumbotron-->
+      <div class="container">
+        <h3 class="text-center" style="font-size: 50px;">Here's How It Works</h3>
+        <div class="row mt-5">
+          <div class="col-12 col-sm-4">
+          <p>STEP 1</p>
+          <h4>Locate a Provider Using Our Directory</h4>
+          <p class="lead">Find your results based on experience or services offered. Whatever the desired skill, we'll help you find a provider.</p>
+          </div>
+          <div class="col-12 col-sm-4">
+            <p>STEP 2</p>
+            <h4>Connect With Your Selection</h4>
+            <p class="lead mt-4">Reach out to potential hires through our platform by phone call or mail service.
+            </p>
+          </div>
+          <div class="col-12 col-sm-4">
+            <p>STEP 3</p>
+            <h4>Shortlist Your Favorites and Hire</h4>
+            <p class="lead">Narrow down your results and hire the one that stands out.</p>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 col-sm-12 mt-3">
+            <h3 class="text-center" style="font-size: 40px;">Helping You Find the Perfect Match Through...</h3>
+            <h4 class="mt-5">Communication</h4>
+            <p>Communicate safely with potential matches knowing that your identity is protected through our system. </p>
+            <h4>Customer Support</h4>
+            <p>Enjoy access to a world class customer support team dedicated to helping you find the perfect match for you.</p>
+            <h4>Security</h4>
+            <p>We, with our Team Members are always active & listening to you & your problems in order to find the better solution.</p>
+            <h4>About Hostel Keepers</h4>
+            <p>Hostel Keepers are always under survelliance while they are at work,so that to provide you Safety.</p>
+            <h4>Hostel Keeper Selection made Easy. <span class="badge badge-danger"> NEW !</span></h4>
+            <p>They are star marked according to their performances that could make it easier for you to select one.</p>
+          </div>
+        </div>
+        <div class="row mt-4 text-center">
+          <div class="col-12 col-sm-12">
+            <button type="button" class="btn btn-lg btn-warning"> <a href="#topone" style="color: black;"> Browse Local Hostel Keepers Now</a></button>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row mt-5 text-center">
+          <div class="col-12 col-sm-12">
+            <h3 style="font-size: 50px;">Who We Are</h3>
+            <p class="lead mt-3">Hostel Keeper is your go to online service for finding professional hostelkeeping jobs. Our website is a job posting service focused on connecting people with a community of qualified cleaning professionals for hostel cleaning. So whether you’re looking for them or you’re a professional cleaner looking for work, our website can help!</p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row mb-2 mt-3">
+          <h5 class="lead text-center">We Work Hard to Keep Hostel Keeper a Safe Community</h5> <h5 class="lead ml-auto">©Anjani&ShashwatDevelopers2021</h5>
+        </div>
+      </div>
+    
+
+
+
+    <script src="/jquery/dist/jquery.slim.min.js"></script>
+    <script src="/popper.js/dist/umd/popper.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
