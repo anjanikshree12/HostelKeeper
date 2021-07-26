@@ -8,7 +8,7 @@ const router = express.Router();
 const session = require("express-session");
 const expressValidator = require("express-validator");
 const message = require("express-messages");
-
+const customId = require("custom-id");
 
 
 app.use(express.json());
@@ -125,10 +125,13 @@ app.post("/register",function(req,res){
     {
       console.log("Didn't saved");
     }else {
-      res.render("second");
-    }
+        Request.find({}, function(err, data) {
+      res.render("second", {requests:data,requestid:data});
   });
+  }
 });
+});
+
 
 app.post("/login", function(req,res){
   const username = req.body.username;
@@ -205,12 +208,21 @@ app.post("/requestsinput", function(req,res){
    {
      console.log("Didn't saved");
    }else {
-      
+
      res.redirect("profile")
       }
  });
 });
 
+// app.post("/profile",function(req,res){
+// var arr = [];
+//
+// var randomNum = Math.floor((Math.random() * requests.length) + 1);
+//
+//  arr.push(randomNum) ;
+//   res.redirect("/profile");
+//
+// });
 
 app.get("/admindashboard",function(req,res){
   res.render("admin");
@@ -229,34 +241,49 @@ app.get("/suggestions", (req, res) => {
    });
 
 app.get("/registerstudents",function(req,res){
-  res.render("registerstudents");
+  Request.find({}, function(err, data) {
+res.render("second", {requests:data,requestid:data});
+});
 });
 app.get("/registerhostelkeeper",function(req,res){
   res.render("registerhostelkeeper");
 });
 
 app.get("/requests",function(req,res){
-res.render("requests");
+  Request.find({}, function(err, data) {
+res.render("requests", {requests:data,requestid:data});
+});
+// res.render("requests");
 });
 app.get("/userdashboard",function(req,res){
-  res.render("second")
+  Request.find({}, function(err, data) {
+res.render("second", {requests:data,requestid:data});
+});
+  // res.render("second")
 })
 app.get('/feedback', (req, res) => {
-    res.render('feedback');
+  Request.find({}, function(err, data) {
+res.render("feedback", {requests:data,requestid:data});
+});
    });
 
 app.get("/profile",function(req,res){
-
-    // Request.find().then(requests=>
+      // Request.find().then(requests=>
+      let id = customId({
+        randomLength:2
+      });
        Request.find({}, function(err, data) {
-    res.render("profile", {requests:data});
+    res.render("profile", {requests:data,requestid:data});
   });
 });
 app.get("/Logout",function(req,res){
   res.render("home");
 });
 app.get("/second",function(req,res){
-  res.render("second");
+  Request.find({}, function(err, data) {
+res.render("second", {requests:data,requestid:data});
+});
+  // res.render("second");
 });
 app.listen(3000,function(){
     console.log("Server started on port 3000");

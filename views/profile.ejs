@@ -32,7 +32,7 @@
                     <div class="card bg-light">
                         <div class="card-body">
                             <h5 class="card-title">Clean Requests</h5>
-                            <h5>5</h5>
+                            <h5><%= requests.length %></h5>
                             <p class="card-text">Since Last Week</p>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                           <table class = "table table-striped">
                           <thead>
                              <tr>
-                               <th>User UID</th>
+                               <th>Request ID</th>
                                <th>Date</th>
                                <th>CheckIn</th>
                                <th>CheckOut</th>
@@ -101,9 +101,11 @@
                            </thead>
 
                             <tbody>
-                              <% requests.forEach(function(request) {%>
-                                <tr>
-                                  <td>User UID</td>
+
+                              <% requests.forEach(function(request){ %>
+                            <tr>
+
+                                  <td><%= request.id %></td>
                                   <td><%= request.date %></td>
                                   <td><%= request.checkin %></td>
                                   <td><%= request.checkout %></td>
