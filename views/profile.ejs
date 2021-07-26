@@ -65,24 +65,54 @@
                     <div class="card bg-light">
                         <div class="card-header d-flex justify-content-between">Your Profile <button type="button" class="btn btn-primary">Request Change</button></div>
 
+
+
+
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12 col-sm">ID Number</div>
                                 <div class="col-12 col-sm">123456789</div>
                             </div>
                             <div class="row mt-2">
-                                <div class="col-12 col-sm">Hostel</div>
-                                <div class="col-12 col-sm">M</div>
+                                <div class="col-12 col-sm">Name</div>
+                                <div class="col-12 col-sm">n</div>
                             </div>
                             <div class="row mt-2">
-                                <div class="col-12 col-sm">Floor</div>
+                                <div class="col-12 col-sm">Contact Details</div>
                                 <div class="col-12 col-sm">2</div>
                             </div>
                             <div class="row mt-2">
-                                <div class="col-12 col-sm">Room</div>
+                                <div class="col-12 col-sm">Email</div>
                                 <div class="col-12 col-sm">107</div>
                             </div>
                          </div>
+
+                         <div class="card-body">
+
+                          <table class = "table table-striped">
+                          <thead>
+                             <tr>
+                               <th>User UID</th>
+                               <th>Date</th>
+                               <th>CheckIn</th>
+                               <th>CheckOut</th>
+                               <th>WorkType</th>
+                             </tr>
+                           </thead>
+
+                            <tbody>
+                              <% requests.forEach(function(request) {%>
+                                <tr>
+                                  <td>User UID</td>
+                                  <td><%= request.date %></td>
+                                  <td><%= request.checkin %></td>
+                                  <td><%= request.checkout %></td>
+                                  <td><%= request.worktype %></td>
+                            </tr>
+                            <% }) %>
+                            </tbody>
+                          </div>
+
                     </div>
 
                 </div>

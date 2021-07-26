@@ -104,3 +104,6 @@ div.content {
 .suggest-artist__link:hover {
   color: green;
 }
+.modal-header{
+  background-color: blueviolet;
+}
