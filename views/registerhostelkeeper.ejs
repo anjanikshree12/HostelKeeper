@@ -63,7 +63,34 @@
         <div class="container">
             <div class="row mt-4">
                 <div class="col-12 col-sm-12">
-                    <div class="card bg-light">
+
+                  <div class="card-body">
+                      <form action = "/requestsinput" method ="POST" >
+
+                      <div class="form-group"
+                        <label for="">Name</label>
+                        <input type = "text" class = "form-control" name="contact"  placeholder = "Name">
+                      </div>
+
+                      <div class="form-group"
+                        <label for="">Contact No.</label>
+                        <input type = "number" class = "form-control" name="contact"  placeholder = "Contact">
+                      </div>
+
+                      <div class="form-group"
+                        <label for="">Address</label>
+                        <input type = "Address" class = "form-control" name="address"  placeholder = "Address">
+                      </div>
+
+                      <div class="form-group"
+                        <label for="">ID</label>
+                        <input type = "upload" class = "form-control" name="worktype"  placeholder = "Aadhar ID,Voter ID etc.">
+                      </div>
+          <button class="btn btn-success">Register</button>
+
+                        </form>
+                  </div>
+                    <!-- <div class="card bg-light">
                         <div class="card-header d-flex justify-content-between">Register New Student</div>
 
                         <div class="card-body">
@@ -71,16 +98,22 @@
                                 <div class="form-row">
                                   <div class="col">
                                       <h6>Name*</h6>
-                                    <input type="text" class="form-control" placeholder="HouseKeeper Name">
+                                    <input type="text" class="form-control" placeholder="HouseKeeper Name" required>
                                   </div>
                                   <div class="col">
-                                      <h6>Floor*</h6>
-                                    <input type="text" class="form-control" placeholder="Enter Numeric Value">
+                                      <h6>Address*</h6>
+                                    <input type="Address" class="form-control" placeholder="Address" required>
                                   </div>
                                 </div>
+                                <div class="col">
+                                    <h6>Contact No.*</h6>
+                                  <input type="number" class="form-control" placeholder="contact" required>
+                                </div>
+                              </div>
+
                                 <button type="submit" class="btn btn-primary mt-3">Register</button>
                               </form>
-                         </div>
+                         </div> -->
                     </div>
 
                 </div>

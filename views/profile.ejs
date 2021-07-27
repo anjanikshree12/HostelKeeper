@@ -67,26 +67,6 @@
 
 
 
-
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12 col-sm">ID Number</div>
-                                <div class="col-12 col-sm">123456789</div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col-12 col-sm">Name</div>
-                                <div class="col-12 col-sm">n</div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col-12 col-sm">Contact Details</div>
-                                <div class="col-12 col-sm">2</div>
-                            </div>
-                            <div class="row mt-2">
-                                <div class="col-12 col-sm">Email</div>
-                                <div class="col-12 col-sm">107</div>
-                            </div>
-                         </div>
-
                          <div class="card-body">
 
                           <table class = "table table-striped">
@@ -105,7 +85,7 @@
                               <% requests.forEach(function(request){ %>
                             <tr>
 
-                                  <td><%= request.id %></td>
+                                  <td><%= request._id %></td>
                                   <td><%= request.date %></td>
                                   <td><%= request.checkin %></td>
                                   <td><%= request.checkout %></td>

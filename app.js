@@ -10,6 +10,7 @@ const expressValidator = require("express-validator");
 const message = require("express-messages");
 const customId = require("custom-id");
 
+var guser = "";
 
 app.use(express.json());
 app.post('/user', (req, res) => {
@@ -49,29 +50,6 @@ mongoose.connect("mongodb://localhost:27017/HostelKeeperDB",{useNewUrlParser:tru
                      useUnifiedTopology:true,
                      useFindAndModify:false});
 
-
-// const requestschema = {
-//                       date: {
-//                         type:String,
-//                         required:true
-//                       },
-//                       checkin: {
-//                         type:String,
-//                         required:true
-//                       },
-//                       checkout:{
-//                         type:String,
-//                         required:true
-//                       },
-//                       worktype:{
-//                         type:String,
-//                         required:true
-//                       },
-//                       sorting:{
-//                         type:Number
-//                       }
-//                      };
-
 const requestschema = {
   date:String,
   checkin:String,
@@ -81,19 +59,12 @@ const requestschema = {
 const Request = new mongoose.model("Request", requestschema);
 module.exports = mongoose.model('request', requestschema, 'request');
 
-// app.post("/requests",function(req,res){
-//
-// });
-// requests.push(request);
-// res.render("profile");
-// });
-
-// const Request = new mongoose.model("Request",requestschema);
-
 const customerSchema = {
   email:String,
   contact:Number,
-  password:String
+  password:String,
+  name:String,
+  address:String
 };
 const Customer = new mongoose.model("Customer",customerSchema);
 
@@ -117,7 +88,9 @@ app.post("/register",function(req,res){
   const newCustomer = new Customer({
     email:req.body.username,
     contact:req.body.contact,
-    password:req.body.password
+    password:req.body.password,
+    name:req.body.name,
+    address:req.body.address
   });
 
   newCustomer.save(function(err){
@@ -126,7 +99,7 @@ app.post("/register",function(req,res){
       console.log("Didn't saved");
     }else {
         Request.find({}, function(err, data) {
-      res.render("second", {requests:data,requestid:data});
+      res.render("second", {requests:data});
   });
   }
 });
@@ -142,7 +115,9 @@ app.post("/login", function(req,res){
     }else{
       if(foundCustomer){
         if(foundCustomer.password === password){
-          res.render("second");
+          Request.find({}, function(err, data) {
+        res.render("second", {requests:data});
+    });
         }
       }
     }
@@ -194,11 +169,13 @@ app.post("/requestsinput", function(req,res){
 
    // console.log(req.body);
   const newrequest = new Request({
+    username:req.body.username,
     date:req.body.date,
     checkin:req.body.checkin,
     checkout:req.body.checkout,
-    worktype:req.body.worktype,
+    worktype:req.body.worktype
   });
+  guser = req.body.username;
  // var errors = req.validationErrors();
 
  // if(errors)
@@ -208,25 +185,16 @@ app.post("/requestsinput", function(req,res){
    {
      console.log("Didn't saved");
    }else {
-
      res.redirect("profile")
       }
  });
 });
 
-// app.post("/profile",function(req,res){
-// var arr = [];
-//
-// var randomNum = Math.floor((Math.random() * requests.length) + 1);
-//
-//  arr.push(randomNum) ;
-//   res.redirect("/profile");
-//
-// });
-
 app.get("/admindashboard",function(req,res){
   res.render("admin");
 });
+
+
 
 app.get("/allot",function(req,res){
   res.render("allot");
@@ -242,7 +210,7 @@ app.get("/suggestions", (req, res) => {
 
 app.get("/registerstudents",function(req,res){
   Request.find({}, function(err, data) {
-res.render("second", {requests:data,requestid:data});
+res.render("second", {requests:data});
 });
 });
 app.get("/registerhostelkeeper",function(req,res){
@@ -251,39 +219,35 @@ app.get("/registerhostelkeeper",function(req,res){
 
 app.get("/requests",function(req,res){
   Request.find({}, function(err, data) {
-res.render("requests", {requests:data,requestid:data});
+res.render("requests", {requests:data});
 });
-// res.render("requests");
 });
 app.get("/userdashboard",function(req,res){
   Request.find({}, function(err, data) {
-res.render("second", {requests:data,requestid:data});
+res.render("second", {requests:data});
 });
-  // res.render("second")
+
 })
 app.get('/feedback', (req, res) => {
   Request.find({}, function(err, data) {
-res.render("feedback", {requests:data,requestid:data});
+res.render("feedback", {requests:data});
 });
    });
 
 app.get("/profile",function(req,res){
-      // Request.find().then(requests=>
-      let id = customId({
-        randomLength:2
-      });
-       Request.find({}, function(err, data) {
-    res.render("profile", {requests:data,requestid:data});
+ const username = guser;
+  Request.find({username:Customer.email}, function(err, data) {
+res.render("profile", {requests:data});
+   });
   });
-});
+
 app.get("/Logout",function(req,res){
   res.render("home");
 });
 app.get("/second",function(req,res){
   Request.find({}, function(err, data) {
-res.render("second", {requests:data,requestid:data});
+res.render("second", {requests:data});
 });
-  // res.render("second");
 });
 app.listen(3000,function(){
     console.log("Server started on port 3000");
