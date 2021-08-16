@@ -31,6 +31,7 @@
                    <div class="col-12 col-sm-4 mt-5">
                     <div class="card bg-light">
                         <div class="card-body">
+                          <!-- <h1><%=user.email%></h1> -->
                             <h5 class="card-title">Clean Requests</h5>
                             <h5><%= requests.length %></h5>
                             <p class="card-text">Since Last Week</p>
@@ -68,6 +69,31 @@
 
 
                          <div class="card-body">
+
+                           <table class = "table table-striped">
+                           <thead>
+                              <tr>
+                                <th>Username</th>
+                                <th>Name</th>
+                                <th>Contact</th>
+                                <th>Address</th>
+
+                              </tr>
+                            </thead>
+
+                             <tbody>
+
+
+                             <tr>
+
+                                   <td><%= user.email %></td>
+                                   <td><%= user.name %></td>
+                                   <td><%= user.contact %></td>
+                                   <td><%= user.address %></td>
+
+                             </tr>
+
+                             </tbody>
 
                           <table class = "table table-striped">
                           <thead>
@@ -110,5 +136,7 @@
     <script src="/jquery/dist/jquery.slim.min.js"></script>
     <script src="/popper.js/dist/umd/popper.min.js"></script>
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>

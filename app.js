@@ -51,10 +51,12 @@ mongoose.connect("mongodb://localhost:27017/HostelKeeperDB",{useNewUrlParser:tru
                      useFindAndModify:false});
 
 const requestschema = {
+  username:String,
   date:String,
   checkin:String,
   checkout:String,
   worktype:String
+
 }
 const Request = new mongoose.model("Request", requestschema);
 module.exports = mongoose.model('request', requestschema, 'request');
@@ -64,7 +66,8 @@ const customerSchema = {
   contact:Number,
   password:String,
   name:String,
-  address:String
+  address:String,
+  request :Array
 };
 const Customer = new mongoose.model("Customer",customerSchema);
 
@@ -90,7 +93,8 @@ app.post("/register",function(req,res){
     contact:req.body.contact,
     password:req.body.password,
     name:req.body.name,
-    address:req.body.address
+    address:req.body.address,
+    request:[]
   });
 
   newCustomer.save(function(err){
@@ -146,8 +150,6 @@ app.post("/adminr",function(req,res){
   });
 });
 
-
-
 app.post("/adminl", function(req,res){
   const username = req.body.username;
   const password = req.body.password;
@@ -176,6 +178,11 @@ app.post("/requestsinput", function(req,res){
     worktype:req.body.worktype
   });
   guser = req.body.username;
+  Customer.findOne({email:guser},function(err,user){
+    user.request.push(newrequest);
+    console.log("req added->"+newrequest);
+    user.save();
+  })
  // var errors = req.validationErrors();
 
  // if(errors)
@@ -188,13 +195,13 @@ app.post("/requestsinput", function(req,res){
      res.redirect("profile")
       }
  });
+
+
 });
 
 app.get("/admindashboard",function(req,res){
   res.render("admin");
 });
-
-
 
 app.get("/allot",function(req,res){
   res.render("allot");
@@ -236,8 +243,12 @@ res.render("feedback", {requests:data});
 
 app.get("/profile",function(req,res){
  const username = guser;
-  Request.find({username:Customer.email}, function(err, data) {
-res.render("profile", {requests:data});
+  console.log("guser-> "+guser);
+  Customer.findOne({email:username}, function(err, data) {
+    if (data!==null) {
+console.log(data);
+      res.render("profile", {requests:data.request,user:data});
+    }
    });
   });
 
