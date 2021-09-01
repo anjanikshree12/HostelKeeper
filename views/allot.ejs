@@ -17,46 +17,60 @@
 <body>
     <div class="sidebar">
         <h5 class="text-center mt-4">User ID Number</h5>
-      <a href="/admindashboard">Dashboard</a>
+      <a href="/admindashboard" class="mt-5">Dashboard</a>
       <a href="/allot" class="active">Allot</a>
-      <a href="/complaints">Complaints</a>
-      <a href="/suggestions">Suggestions</a>
-      <a href="/registerstudents">Register Students</a>
+      <a href="/complaints">Complaints&Suggestions</a>
+      <a href="/userrequests">User Requests</a>
+      <!-- <a href="/registerstudents">Register Students</a> -->
       <a href="/registerhostelkeeper">Register Hostel Keeper</a>
       <a href="/Logout">Logout</a>
     </div>
     <div class="content">
-        <div class="top">
+        <nav aria-label="breadcrumb" class="mt-3">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a>Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Allot</li>
+            </ol>
+          </nav>
+          <div class="top">
             <div class="container">
                 <div class="row">
-                   <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Clean Requests</h5>
-                            <h5>5</h5>
-                            <p class="card-text">Since Last Week</p>
-                        </div>
-                    </div>
-                   </div>
-                   <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Suggestions</h5>
-                            <h5>7</h5>
-                            <p class="card-text">Since Last Week</p>
-                        </div>
+                    <div class="col-12 col-md-12">
+                        <h5>
+                            <span class="mt-5 badge badge-pill badge-success text-white">Hostel Keeping Admin
+                                Portal</span>
+                        </h5>
                     </div>
                 </div>
-                <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Complaints</h5>
-                            <h5>1</h5>
-                            <p class="card-text">Since Last Week</p>
+                <div class="row">
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Workers</h5>
+                                <h5><%= workers.length %></h5>
+                                <!-- <p class="card-text">Since Last Week</p> -->
+                            </div>
                         </div>
                     </div>
-                </div>
-                    
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Suggestions</h5>
+                                <h5>7</h5>
+                                <p class="card-text">Since Last Week</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Complaints</h5>
+                                <h5>1</h5>
+                                <p class="card-text">Since Last Week</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -64,39 +78,41 @@
             <div class="row mt-4">
                 <div class="col-12 col-sm-12">
                     <div class="card bg-light">
-                        <div class="card-header d-flex justify-content-between">Allot Hostel Keeper</div>
-                        
+                        <div class="card-header d-flex justify-content-between">Allot Hostel Keeper a Work</div>
+
                         <div class="card-body">
-                            <form>
+                              <form action="/allotform"  method="POST">
                                 <div class="form-row">
                                   <div class="col">
                                       <h6>Request Id*</h6>
                                     <input type="text" class="form-control" placeholder="Enter ID">
                                   </div>
-                                  <div class="col">
+                                  <!-- <div class="col">
                                       <h6>Room Number</h6>
                                     <input type="text" class="form-control" placeholder="Room Number">
                                   </div>
                                   <div class="col">
                                     <h6>Time Requested</h6>
                                     <input type="text" class="form-control" placeholder="Time Requested">
-                                  </div>
+                                  </div> -->
                                 </div>
+
                                 <div class="form-row">
+
                                     <div class="col-12 col-sm-6 mt-3">
                                         <label for="inputState">House Keeper*</label>
                                         <select id="inputState" class="form-control">
-                                          <option selected>Ground Floor - vinit</option>
-                                          <option>Floor 1 - ABC</option>
-                                          <option>Floor 2 - ABD</option>
-                                          <option>Floor 3 - ABE</option>
-                                          <option>Floor 4 - ABF</option>
-                                          <option>Floor 5 - ABG</option>
-                                          <option>Floor 6 - ABH</option>
-                                        </select>
+                                              <%  workers.forEach(function(worker){ %>
+                                            <option><%= worker.name %></option>
+
                                     </div>
+
                                 </div>
-                                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+
+                                   <% }) %>
+                                      <br>
+                                <input type="submit" class="btn btn-success" value="Allot">
+                              </select>
                               </form>
                          </div>
                     </div>
@@ -107,14 +123,59 @@
 
         </div>
 
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-12 col-sm-12">
+                    <div class="card bg-light">
+                        <div class="card-header d-flex justify-content-between">Hostel Keepers details</div>
+
+                        <div class="card-body">
+                          <table class="table table-striped">
+                              <thead>
+                                  <tr>
+                                      <th>Name</th>
+                                      <th>Contact</th>
+                                      <th>Address</th>
+                                      <th>ID Type</th>
+
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <% workers.forEach(function(worker){ %>
+                                      <tr>
+
+                                          <td>
+                                              <%= worker.name %>
+                                          </td>
+                                          <td>
+                                              <%= worker.contact %>
+                                          </td>
+                                          <td>
+                                              <%= worker.address %>
+                                          </td>
+                                          <td>
+                                              <%= worker.idtype %>
+                                          </td>
+
+                                      </tr>
+                                      <% }) %>
+                              </tbody>
+                          </table>
+
+                         </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
 
-
-
     <script src="/jquery/dist/jquery.slim.min.js"></script>
     <script src="/popper.js/dist/umd/popper.min.js"></script>
-    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>    
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

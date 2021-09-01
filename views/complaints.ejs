@@ -17,45 +17,59 @@
 <body>
     <div class="sidebar">
       <h5 class="text-center mt-4">User ID Number</h5>
-      <a href="/admindashboard">Dashboard</a>
-      <a href="/allot">Allot</a>
-      <a href="/complaints" class="active">Complaints</a>
-      <a href="/suggestions">Suggestions</a>
-      <a href="/registerstudents">Register Students</a>
-      <a href="/registerhostelkeeper">Register Hostel Keeper</a>
-      <a href="/Logout">Logout</a>
+    <a href="/admindashboard" class="mt-5">Dashboard</a>
+    <a href="/allot" >Allot</a>
+    <a href="/complaints" class="active">Complaints&Suggestions</a>
+      <a href="/userrequests">User Requests</a>
+    <!-- <a href="/registerstudents">Register Students</a> -->
+    <a href="/registerhostelkeeper">Register Hostel Keeper</a>
+    <a href="/Logout">Logout</a>
     </div>
     <div class="content">
-        <div class="top">
+        <nav aria-label="breadcrumb" class="mt-3">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a>Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Complaints</li>
+            </ol>
+          </nav>
+          <div class="top">
             <div class="container">
                 <div class="row">
-                   <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Clean Requests</h5>
-                            <h5>5</h5>
-                            <p class="card-text">Since Last Week</p>
-                        </div>
-                    </div>
-                   </div>
-                   <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Suggestions</h5>
-                            <h5>7</h5>
-                            <p class="card-text">Since Last Week</p>
-                        </div>
+                    <div class="col-12 col-md-12">
+                        <h5>
+                            <span class="mt-5 badge badge-pill badge-success text-white">Hostel Keeping Admin
+                                Portal</span>
+                        </h5>
                     </div>
                 </div>
-                <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Complaints</h5>
-                            <h5>1</h5>
-                            <p class="card-text">Since Last Week</p>
+                <div class="row">
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Clean Requests</h5>
+                                <h5><%= requests.length %></h5>
+                                <p class="card-text">Since Last Week</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Suggestions</h5>
+                                <h5>7</h5>
+                                <p class="card-text">Since Last Week</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Complaints</h5>
+                                <h5>1</h5>
+                                <p class="card-text">Since Last Week</p>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -94,6 +108,39 @@
 
         </div>
 
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-12 col-sm-12">
+                    <div class="card bg-light">
+                        <div class="card-header d-flex justify-content-between">Suggestions</div>
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-sm">Hostel Keeper</div>
+                                <!-- <div class="col-12 col-sm">Room</div> -->
+                                <div class="col-12 col-sm">Date</div>
+                                <div class="col-12 col-sm">Suggestions</div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12 col-sm">vinit</div>
+                                <!-- <div class="col-12 col-sm">C102</div> -->
+                                <div class="col-12 col-sm">2021-05-03</div>
+                                <div class="col-12 col-sm">BRING ADDITIONAL EQUIPMENTS</div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12 col-sm">mohan</div>
+                                <!-- <div class="col-12 col-sm">C103</div> -->
+                                <div class="col-12 col-sm">2021-05-03</div>
+                                <div class="col-12 col-sm">ARRIVE ON TIME</div>
+                            </div>
+                         </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 

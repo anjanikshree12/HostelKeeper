@@ -9,8 +9,6 @@
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-
-
   <title>Hostel Keeper</title>
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="/bootstrap-social/bootstrap-social.css">
@@ -19,262 +17,354 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 
 <body>
+  <div class="home">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="/" id="topone">
+          <h5 class="brand">HOSTELKEEPERS</h5>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <!--Navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html" id="topone">Hostel Keeper</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Admin
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal3">Sign In</a>
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">Sign Up</a>
-              <div class="dropdown-divider"></div>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              User
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal4">Sign In</a>
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal2">Sign Up</a>
-              <div class="dropdown-divider"></div>
-            </div>
-          </li>
-          <!--Modal of User Sign In-->
-
-          <div class="modal" id="exampleModal4" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header bg-primary">
-                  <h5 class="modal-title text-white">User Sign In</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="container">
-                  <!-- Makes POST request to /Userlogin route -->
-                  <form action="/login" method="POST">
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" class="form-control" name="username">
-                    </div>
-                    <div class="form-group">
-                      <label for="password">Password</label>
-                      <input type="password" class="form-control" name="password">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                  </form>
-                </div>
-                </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="#" class=" nav-link text-white">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Admin
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal3">Sign In</a>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">Sign Up</a>
+                <div class="dropdown-divider"></div>
               </div>
-            </div>
-          </div>
-          <!--Modal of Admin Sign In-->
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                User
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal4">Sign In</a>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal2">Sign Up</a>
+                <div class="dropdown-divider"></div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#schemes" class=" nav-link text-white">Our Schemes</a>
+            </li>
+            <li class="nav-item">
+              <a href="#howto" class=" nav-link text-white">How-to</a>
+            </li>
+            <li class="nav-item">
+              <a href="#features" class=" nav-link text-white">Features</a>
+            </li>
+            <li class="nav-item">
+              <a href="#home3" class="nav-link text-white">About Us</a>
+            </li>
+            <!--Modal of User Sign In-->
 
-          <div class="modal" id="exampleModal3" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header bg-primary">
-                  <h5 class="modal-title text-white">Admin Sign In</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <!-- Makes POST request to /Adminlogin route -->
-                <div class="modal-body">
-                  <div class="container">
-                  <form action="/adminl" method="POST">
-                    <div class="form-group">
-                      <label for="username">Email</label>
-                      <input type="email" class="form-control" name="username">
+            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header bg-primary">
+                    <h5 class="modal-title text-white">User Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <!-- Makes POST request to /Userlogin route -->
+                      <form action="/login" method="POST">
+                        <div class="form-row">
+                          <div class="col">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="username">
+                          </div>
+                          <div class="col">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" name="password">
+                          </div>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                      </form>
                     </div>
-
-                    <div class="form-group">
-                      <label for="password">Password</label>
-                      <input type="number" class="form-control" name="password">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                  </form>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!--Modal of User Sign up-->
-
-          <div class="modal" id="exampleModal2" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header bg-primary">
-                  <h5 class="modal-title text-white">User Sign Up</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="container">
-                  <!-- Makes POST request to /login route -->
-                  <form action="/register" method="POST">
-                    <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="text" class="form-control" name="name" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" class="form-control" name="username" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="contact">Contact No.</label>
-                      <input type="String" class="form-control" name="contact" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="password">Password</label>
-                      <input type="number" class="form-control" name="password" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="address">Address</label>
-                      <input type="text" class="form-control" name="address" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Register</button>
-                  </form>
+            <!--Modal of Admin Sign In-->
+            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header bg-primary">
+                    <h5 class="modal-title text-white">Admin Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!--Modal of Admin Sign Up-->
-
-
-          <div class="modal" id="exampleModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header bg-primary">
-                  <h5 class="modal-title text-white">Admin Sign Up</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="container">
                   <!-- Makes POST request to /Adminlogin route -->
-                  <form action="/adminr" method="POST">
-
-                    <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="String" class="form-control" name="name" required>
+                  <div class="modal-body">
+                    <div class="container">
+                      <form action="/adminl" method="POST">
+                        <div class="form-row">
+                          <div class="col">
+                            <label for="username">Email</label>
+                            <input type="email" class="form-control" name="username">
+                          </div>
+                          <div class="col">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" name="password">
+                          </div>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                      </form>
                     </div>
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" class="form-control" name="username" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="contact">Contact No.</label>
-                      <input type="number" class="form-control" name="contact" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="city">City</label>
-                      <input type="navbarDropdown" class="form-control" name="city" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="password">Password</label>
-                      <input type="number" class="form-control" name="password" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Register</button>
-                  </form>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-  </nav>
-  <!--Jumbotron-->
-  <div class="jumbotron align-items-center text-center">
-    <h1 class="display-4">Hire Hostelkeepers in Your Area !</h1>
-    <p class="lead">Someone out there loves cleaning Rooms as much as you hate doing them. Hire a one-time or recurring
-      cleaning service today.</p>
-    <hr class="my-4">
-    <a class="btn btn-success btn-lg" href="#"> Find my Hostel Keeper</a>
-    <p class="lead mt-2">Are you looking for a hostelkeeping job? Apply Now.</p>
+            <!--Modal of User Sign up-->
+
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header bg-primary">
+                    <h5 class="modal-title text-white">User Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <!-- Makes POST request to /login route -->
+                      <form action="/register" method="POST">
+                        <div class="form-row">
+                          <div class="col">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                          </div>
+                          <div class="col">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="username" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col">
+                            <label for="contact">Contact No.</label>
+                            <input type="String" class="form-control" name="contact" required>
+                          </div>
+                          <div class="col">
+                            <label for="password">Password</label>
+                            <input type="number" class="form-control" name="password" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" name="address" required>
+                          </div>
+                        </div>
+                        <br>
+                        <button type="submit" onclick="myFunction()"
+                          class="btn btn-primary">Register</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Modal of Admin Sign Up-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header bg-primary">
+                    <h5 class="modal-title text-white">Admin Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <!-- Makes POST request to /Adminlogin route -->
+                      <form action="/adminr" method="POST">
+                        <div class="form-row">
+                          <div class="col">
+                            <label for="name">Name</label>
+                            <input type="String" class="form-control" name="name" required>
+                          </div>
+                          <div class="col">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="username" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col"><label for="contact">Contact No.</label>
+                            <input type="number" class="form-control" name="contact" required>
+                          </div>
+                          <div class="col">
+                            <label for="city">City</label>
+                            <input type="navbarDropdown" class="form-control" name="city" required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col">
+                            <label for="password">Password</label>
+                            <input type="number" class="form-control" name="password" required>
+                          </div>
+                        </div>
+                        <br>
+                        <button type="submit" onclick="myFunction()"
+                          class="btn btn-primary">Register</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </nav>
+    <div class="container">
+      <div class="row row-content align-items-center">
+        <div class="col-6 col-md-6 offset-6">
+          <h1 class="display-4">Hire Hostel Keepers in Your Area !</h1>
+          <p class="lead">Someone out there loves cleaning as much as you hate doing them. Hire a one-time or
+            recurring
+            cleaning service today.</p>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <!-- after home -->
+  <div class="home2" id="schemes">
+    <div class="container">
+      <div class="row pt-4">
+        <div class="col-12 col-md-12">
+          <h3 class="text-center" style="font-size: 50px;">Our Schemes</h3>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row align-items-center pt-4">
+        <div class="col-12 col-md-6 mt-4">
+          <div class="card border-primary text-center">
+            <div class="card-header">
+              <h3>Become an Admin</h3>
+            </div>
+            <div class="card-body">
+              <p class="card-text text-left ml-4">Register & Login via Admin Portal</p>
+              <p class="card-text text-left ml-4">Assign available workers online</p>
+              <p class="card-text text-left ml-4">Allot workers to User Requests</p>
+              <p class="card-text text-left ml-4">Receive payment from Users via added methods</p>
+              <p class="card-text text-left ml-4">Check for suggestions & complaints by users</p>
+              <p class="card-text text-left ml-4">Pay the respective worker after their work</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 mt-4">
+          <div class="card border-primary text-center">
+            <div class="card-header">
+              <h3>Hire a Hostel Keeper</h3>
+            </div>
+            <div class="card-body">
+              <p class="card-text text-left ml-4">Register & Login via User Portal</p>
+              <p class="card-text text-left ml-4">Check for availability of workers online</p>
+              <p class="card-text text-left ml-4">Send Requests to the respective admins</p>
+              <p class="card-text text-left ml-4">Get workers alloted for your area</p>
+              <p class="card-text text-left ml-4">Rate your assigned worker after their work.</p>
+              <p class="card-text text-left ml-4">Provide Suggestions and Complaints if any!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!--After Jumbotron-->
-  <div class="container">
-    <h3 class="text-center" style="font-size: 50px;">Here's How It Works</h3>
-    <div class="row mt-5">
-      <div class="col-12 col-sm-4">
-        <p>STEP 1</p>
-        <h4>Locate a Provider Using Our Directory</h4>
-        <p class="lead">Find your results based on experience or services offered. Whatever the desired skill, we'll
-          help you find a provider.</p>
-      </div>
-      <div class="col-12 col-sm-4">
-        <p>STEP 2</p>
-        <h4>Connect With Your Selection</h4>
-        <p class="lead mt-4">Reach out to potential hires through our platform by phone call or mail service.
-        </p>
-      </div>
-      <div class="col-12 col-sm-4">
-        <p>STEP 3</p>
-        <h4>Shortlist Your Favorites and Hire</h4>
-        <p class="lead">Narrow down your results and hire the one that stands out.</p>
-      </div>
-    </div>
-    <div class="row mt-5">
-      <div class="col-12 col-sm-12 mt-3">
-        <h3 class="text-center" style="font-size: 40px;">Helping You Find the Perfect Match Through...</h3>
-        <h4 class="mt-5">Communication</h4>
-        <p>Communicate safely with potential matches knowing that your identity is protected through our system. </p>
-        <h4>Customer Support</h4>
-        <p>Enjoy access to a world class customer support team dedicated to helping you find the perfect match for you.
-        </p>
-        <h4>Security</h4>
-        <p>We, with our Team Members are always active & listening to you & your problems in order to find the better
-          solution.</p>
-        <h4>About Hostel Keepers</h4>
-        <p>Hostel Keepers are always under survelliance while they are at work,so that to provide you Safety.</p>
-        <h4>Hostel Keeper Selection made Easy. <span class="badge badge-danger"> NEW !</span></h4>
-        <p>They are star marked according to their performances that could make it easier for you to select one.</p>
+  <div class="home4" id="howto">
+    <div class="container">
+      <h3 class="text-center pt-4" style="font-size: 50px;">Here's How It Works</h3>
+      <div class="row pt-5">
+        <div class="col-12 col-sm-4">
+          <p>STEP 1</p>
+          <h4>Availability of workers</h4>
+          <p class="lead">If you find workers available, send request to admin to get them alloted for you. </p>
+        </div>
+        <div class="col-12 col-sm-4">
+          <p>STEP 2</p>
+          <h4>Connect With Your Selection</h4>
+          <p class="lead">Reach out to your assigned worker by phone call or sms service.
+          </p>
+        </div>
+        <div class="col-12 col-sm-4">
+          <p>STEP 3</p>
+          <h4>Feedbacks are mandatory</h4>
+          <p class="lead">When your work gets done, don't forget to provide ratings and feedback as it matters a lot.
+          </p>
+        </div>
       </div>
     </div>
-    <div class="row mt-4 text-center">
-      <div class="col-12 col-sm-12">
-        <button type="button" class="btn btn-lg btn-warning"> <a href="#topone" style="color: black;"> Browse Local
+  </div>
+  </div>
+  <div class="home5" id="features">
+    <div class="container">
+      <div class="row row-content pt-5">
+        <div class="col-12 col-sm-12 pt-3">
+          <h3 class="text-center" style="font-size: 40px;">Helping You Find the Perfect Match Through</h3>
+          <h4 class="pt-5">Communication</h4>
+          <p>Communicate safely with the workers and guide them properly so that they could reach to your place. </p>
+          <h4>Customer Support</h4>
+          <p>Enjoy access to a world class customer support team dedicated to helping you find the perfect match for
+            you.
+          </p>
+          <h4>Security</h4>
+          <p>We, with our Team Members are always active & listening to you & your problems in order to find the better
+            solution.</p>
+          <h4>About Hostel Keepers</h4>
+          <p>Hostel Keepers are always under survelliance while they are at work,so that to provide you Safety.</p>
+          <h4>Hostel Keeper Selection made Easy. <span class="badge badge-danger"> NEW !</span></h4>
+          <p>Workers are rated according to their performances that could make it easier for you to select one.</p>
+        </div>
+        <button type="button" class="btn btn-lg btn-warning"><a href="#topone" style="color: black;"> Browse Local
             Hostel Keepers Now</a></button>
       </div>
     </div>
-    <br>
-    <hr>
-    <div class="row mt-5 text-center">
-      <div class="col-12 col-sm-12">
-        <h3 style="font-size: 50px;">Who We Are</h3>
-        <p class="lead mt-3">Hostel Keeper is your go to online service for finding professional hostelkeeping jobs. Our
-          website is a job posting service focused on connecting people with a community of qualified cleaning
-          professionals for hostel cleaning. So whether you’re looking for them or you’re a professional cleaner looking
-          for work, our website can help!</p>
+  </div>
+  </div>
+  <div class="home3" id="home3">
+    <div class="container">
+      <div class="row row-content align-items-center pt-5 text-center">
+        <div class="col-12 col-sm-12">
+          <h3 class="last pt-4" style="font-size: 50px;">Who We Are</h3>
+          <p class="lead pt-3 text-justify text-white">Hostel Keeper is your go to online service for finding
+            professional hostelkeeping jobs.
+            Our website is a job posting service focused on connecting people with a community of qualified cleaning
+            professionals for hostel cleaning. So whether you’re looking for them or you’re a professional cleaner
+            looking
+            for work, our website can help!</p>
+        </div>
       </div>
-    </div>
-    <br>
-    <hr>
-    <div class="row mb-2 mt-3">
-      <h5 class="lead text-center">We Work Hard to Keep Hostel Keeper a Safe Community</h5>
-      <h5 class="lead ml-auto">©Anjani&ShashwatDevelopers2021</h5>
+      <div class="row">
+        <div class="col-12 col-md-12">
+          <p class="lead d-flex justify-content-between text-white">© 2021 Hostel Keeper <a href="#"><span class="fa fa-arrow-circle-up"></span></a></p>
+      
+        </div>
+      </div>
     </div>
   </div>
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -282,11 +372,18 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> -->
 
 
-
+  <script>$('.carousel').carousel({
+      interval: 1000
+    })</script>
   <script language="javascript" src="js/bootstrap.min.js"></script>
   <script src="/jquery/dist/jquery.slim.min.js"></script>
   <script src="/popper.js/dist/umd/popper.min.js"></script>
   <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+    function myFunction() {
+      alert("Registered Successfully, you can Login now");
+    }
+  </script>
 
 </body>
 

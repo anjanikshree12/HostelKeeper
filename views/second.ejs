@@ -29,16 +29,27 @@
       </div>
 
       <div class="content">
+        <nav aria-label="breadcrumb" class="mt-3">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a>Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">User Dashboard</li>
+            </ol>
+        </nav>
           <div class="top">
               <div class="container">
-                  <div class="row">
-                        <div class="d-flex p-2 mt-5 rounded border border-success bg-success text-white container-fluid">Welcome to the online Hostel Keeping User Portal. You are now logged In.</div>
-                  </div>
+                <div class="row">
+                    <div class="col-12 col-md-12">
+                        <h5>
+                            <span class="mt-5 badge badge-pill badge-success text-white">Hostel Keeping User
+                                Portal</span>
+                        </h5>
+                    </div>
+                </div>
                   <div class="row">
                      <div class="col-12 col-sm-4 mt-3">
                       <div class="card bg-light">
                           <div class="card-body">
-                              <h5 class="card-title">Clean Requests</h5>
+                              <h5 class="card-title">User Clean Requests</h5>
                               <h5><%= requests.length %></h5>
                               <p class="card-text">Since Last Week</p>
                           </div>

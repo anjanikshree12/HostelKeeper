@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,48 +15,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="sidebar">
-      <h5 class="text-center mt-4">User ID Number</h5>
-      <a href="/userdashboard">Dashboard</a>
-      <a href="/requests">Requests</a>
-      <a href="/feedback">Feedback</a>
-      <a href="/profile"  class="active">Profile</a>
-      <a href="/Logout">Logout</a>
+        <h5 class="text-center mt-4">User ID Number</h5>
+        <a href="/userdashboard" class="mt-5">Dashboard</a>
+        <a href="/requests">Requests</a>
+        <a href="/feedback">Feedback</a>
+        <a href="/profile" class="active">Profile</a>
+        <a href="/Logout">Logout</a>
     </div>
     </div>
     <div class="content">
+        <nav aria-label="breadcrumb" class="mt-3">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a>Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Profile</li>
+            </ol>
+        </nav>
         <div class="top">
             <div class="container">
                 <div class="row">
-                   <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                          <!-- <h1><%=user.email%></h1> -->
-                            <h5 class="card-title">Clean Requests</h5>
-                            <h5><%= requests.length %></h5>
-                            <p class="card-text">Since Last Week</p>
-                        </div>
-                    </div>
-                   </div>
-                   <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Suggestions</h5>
-                            <h5>7</h5>
-                            <p class="card-text">Since Last Week</p>
-                        </div>
+                    <div class="col-12 col-md-12">
+                        <h5>
+                            <span class="mt-5 badge badge-pill badge-success text-white">Hostel Keeping User
+                                Portal</span>
+                        </h5>
                     </div>
                 </div>
-                <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Complaints</h5>
-                            <h5>1</h5>
-                            <p class="card-text">Since Last Week</p>
+                <div class="row">
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">User Clean Requests</h5>
+                                <h5>
+                                    <%= requests.length %>
+                                </h5>
+                                <p class="card-text">Since Last Week</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Suggestions</h5>
+                                <h5>7</h5>
+                                <p class="card-text">Since Last Week</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Complaints</h5>
+                                <h5>1</h5>
+                                <p class="card-text">Since Last Week</p>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -64,69 +81,89 @@
             <div class="row mt-4">
                 <div class="col-12 col-sm-12">
                     <div class="card bg-light">
-                        <div class="card-header d-flex justify-content-between">Your Profile <button type="button" class="btn btn-primary">Request Change</button></div>
-
-
-
-                         <div class="card-body">
-
-                           <table class = "table table-striped">
-                           <thead>
-                              <tr>
-                                <th>Username</th>
-                                <th>Name</th>
-                                <th>Contact</th>
-                                <th>Address</th>
-
-                              </tr>
-                            </thead>
-
-                             <tbody>
-
-
-                             <tr>
-
-                                   <td><%= user.email %></td>
-                                   <td><%= user.name %></td>
-                                   <td><%= user.contact %></td>
-                                   <td><%= user.address %></td>
-
-                             </tr>
-
-                             </tbody>
-
-                          <table class = "table table-striped">
-                          <thead>
-                             <tr>
-                               <th>Request ID</th>
-                               <th>Date</th>
-                               <th>CheckIn</th>
-                               <th>CheckOut</th>
-                               <th>WorkType</th>
-                             </tr>
-                           </thead>
-
-                            <tbody>
-
-                              <% requests.forEach(function(request){ %>
-                            <tr>
-
-                                  <td><%= request._id %></td>
-                                  <td><%= request.date %></td>
-                                  <td><%= request.checkin %></td>
-                                  <td><%= request.checkout %></td>
-                                  <td><%= request.worktype %></td>
-                            </tr>
-                            <% }) %>
-                            </tbody>
-                          </div>
-
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>
+                                            <%= user.email %>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>
+                                            <%= user.name %>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>Contact</th>
+                                        <th>
+                                            <%= user.contact %>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>Address</th>
+                                        <th>
+                                            <%= user.address %>
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-
                 </div>
-
             </div>
+        </div>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h6>User Requests</h6>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Request ID</th>
+                                        <th>Date</th>
+                                        <th>CheckIn</th>
+                                        <th>CheckOut</th>
+                                        <th>WorkType</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% requests.forEach(function(request){ %>
+                                        <tr>
 
+                                            <td>
+                                                <%= request._id %>
+                                            </td>
+                                            <td>
+                                                <%= request.date %>
+                                            </td>
+                                            <td>
+                                                <%= request.checkin %>
+                                            </td>
+                                            <td>
+                                                <%= request.checkout %>
+                                            </td>
+                                            <td>
+                                                <%= request.worktype %>
+                                            </td>
+                                            <td>
+                                                <form action="/deletereq" method="post">
+                                                    <input type="checkbox" name="checkbox" value="<%=request._id%>" onChange="this.form.submit()">       
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -136,7 +173,16 @@
     <script src="/jquery/dist/jquery.slim.min.js"></script>
     <script src="/popper.js/dist/umd/popper.min.js"></script>
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <!-- <script type="text/javascript">
+    $(document).ready(function(){
+        $('#btnSubmit').click(function(){
+            $('#myAlert').show('fade');
+        });
+        $('#linkClose').click(function(){
+            $('#myAlert').hide('fade');
+        });
+    });
+    </script> -->
 </body>
 
 </html>

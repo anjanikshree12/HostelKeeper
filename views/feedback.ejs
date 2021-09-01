@@ -17,7 +17,7 @@
 <body>
     <div class="sidebar">
       <h5 class="text-center mt-4">User ID Number</h5>
-      <a href="/userdashboard">Dashboard</a>
+      <a href="/userdashboard" class="mt-5">Dashboard</a>
       <a href="/requests">Requests</a>
       <a href="/feedback" class="active">Feedback</a>
       <a href="/profile">Profile</a>
@@ -25,36 +25,50 @@
     </div>
     </div>
     <div class="content">
+        <nav aria-label="breadcrumb" class="mt-3">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a>Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Feedback</li>
+            </ol>
+        </nav>
         <div class="top">
             <div class="container">
                 <div class="row">
-                   <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Clean Requests</h5>
-                            <h5><%= requests.length %></h5>
-                            <p class="card-text">Since Last Week</p>
-                        </div>
-                    </div>
-                   </div>
-                   <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Suggestions</h5>
-                            <h5>7</h5>
-                            <p class="card-text">Since Last Week</p>
-                        </div>
+                    <div class="col-12 col-md-12">
+                        <h5>
+                            <span class="mt-5 badge badge-pill badge-success text-white">Hostel Keeping User
+                                Portal</span>
+                        </h5>
                     </div>
                 </div>
-                <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Complaints</h5>
-                            <h5>1</h5>
-                            <p class="card-text">Since Last Week</p>
+                <div class="row">
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">User Clean Requests</h5>
+                                <h5><%= requests.length %></h5>
+                                <p class="card-text">Since Last Week</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Suggestions</h5>
+                                <h5>7</h5>
+                                <p class="card-text">Since Last Week</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Complaints</h5>
+                                <h5>1</h5>
+                                <p class="card-text">Since Last Week</p>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -76,7 +90,7 @@
                                     <input type="text" class="form-control" placeholder="Rate between 1 to 5">
                                   </div>
                                 </div>
-                                <div class="form-row mt-2">
+                                <!-- <div class="form-row mt-2">
                                     <div class="col">
                                         <h6>Time In*</h6>
                                       <input type="text" class="form-control" placeholder="Time In">
@@ -85,7 +99,7 @@
                                         <h6>Time Out*</h6>
                                       <input type="text" class="form-control" placeholder="Time Out">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-row mt-2">
                                     <div class="col">
                                         <h6>Suggestions</h6>

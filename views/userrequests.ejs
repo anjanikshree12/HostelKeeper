@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Allot</title>
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/bootstrap-social/bootstrap-social.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <h5 class="text-center mt-4">User ID Number</h5>
+      <a href="/admindashboard" class="mt-5">Dashboard</a>
+      <a href="/allot">Allot</a>
+        <a href="/userrequests" class="active">User Requests</a>
+      <a href="/complaints">Complaints&Suggestions</a>
+      <!-- <a href="/suggestions">Suggestions</a> -->
+      <!-- <a href="/registerstudents">Register Students</a> -->
+      <a href="/registerhostelkeeper">Register Hostel Keeper</a>
+      <a href="/Logout">Logout</a>
+    </div>
+    <div class="content">
+        <nav aria-label="breadcrumb" class="mt-3">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a>Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Allot</li>
+            </ol>
+          </nav>
+          <div class="top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-12">
+                        <h5>
+                            <span class="mt-5 badge badge-pill badge-success text-white">Hostel Keeping Admin
+                                Portal</span>
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Workers</h5>
+                                <h5><%= requests.length %></h5>
+                                <!-- <p class="card-text">Since Last Week</p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Suggestions</h5>
+                                <h5>7</h5>
+                                <p class="card-text">Since Last Week</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 mt-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Complaints</h5>
+                                <h5>1</h5>
+                                <p class="card-text">Since Last Week</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-12 col-sm-12">
+                    <div class="card bg-light">
+                        <div class="card-header d-flex justify-content-between">User Requests details</div>
+
+                        <div class="card-body">
+                          <table class="table table-striped">
+                              <thead>
+                                  <tr>
+                                      <th>Request ID</th>
+                                      <th>Date</th>
+                                      <th>Check In Time</th>
+                                      <th>Check Out Time</th>
+                                      <th>Work Type</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <% requests.forEach(function(request){ %>
+                                      <tr>
+
+                                          <td>
+                                              <%= request._id %>
+                                          </td>
+                                          <td>
+                                              <%= request.date %>
+                                          </td>
+                                          <td>
+                                              <%= request.checkin %>
+                                          </td>
+                                          <td>
+                                              <%= request.checkout %>
+                                          </td>
+                                          <td>
+                                              <%= request.worktype %>
+                                          </td>
+                                      </tr>
+                                      <% }) %>
+                              </tbody>
+                          </table>
+
+                         </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="/jquery/dist/jquery.slim.min.js"></script>
+    <script src="/popper.js/dist/umd/popper.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

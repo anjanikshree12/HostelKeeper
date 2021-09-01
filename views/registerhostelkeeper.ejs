@@ -1,135 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Register</title>
-    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/bootstrap-social/bootstrap-social.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Register</title>
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/bootstrap-social/bootstrap-social.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="sidebar">
-      <h5 class="text-center mt-4">User ID Number</h5>
-      <a href="/admindashboard">Dashboard</a>
-      <a href="/allot">Allot</a>
-      <a href="/complaints">Complaints</a>
-      <a href="/suggestions">Suggestions</a>
-      <a href="/registerstudents">Register Students</a>
-      <a href="/registerhostelkeeper" class="active">Register Hostel Keeper</a>
-      <a href="/Logout">Logout</a>
-    </div>
-    <div class="content">
-        <div class="top">
-            <div class="container">
-                <div class="row">
-                   <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Clean Requests</h5>
-                            <h5>5</h5>
-                            <p class="card-text">Since Last Week</p>
-                        </div>
-                    </div>
-                   </div>
-                   <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Suggestions</h5>
-                            <h5>7</h5>
-                            <p class="card-text">Since Last Week</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-4 mt-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Complaints</h5>
-                            <h5>1</h5>
-                            <p class="card-text">Since Last Week</p>
-                        </div>
-                    </div>
-                </div>
-
-                </div>
-            </div>
+  <div class="sidebar">
+    <h5 class="text-center mt-4">User ID Number</h5>
+    <a href="/admindashboard" class="mt-5">Dashboard</a>
+    <a href="/allot">Allot</a>
+    <a href="/complaints">Complaints&Suggestions</a>
+    <a href="/userrequests">User Requests</a>
+    <!-- <a href="/registerstudents">Register Students</a> -->
+    <a href="/registerhostelkeeper" class="active">Register Hostel Keeper</a>
+    <a href="/Logout">Logout</a>
+  </div>
+  <div class="content">
+    <nav aria-label="breadcrumb" class="mt-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a>Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Register Hostel Keeper</li>
+      </ol>
+    </nav>
+    <div class="top">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-12">
+            <h5>
+              <span class="mt-5 badge badge-pill badge-success text-white">Hostel Keeping Admin
+                Portal</span>
+            </h5>
+          </div>
         </div>
-        <div class="container">
-            <div class="row mt-4">
-                <div class="col-12 col-sm-12">
+        <div class="row">
+          <div class="col-12 col-sm-4 mt-3">
+            <div class="card bg-light">
+              <div class="card-body">
+                <h5 class="card-title">Clean Requests</h5>
+                <h5><%= requests.length %></h5>
+                <p class="card-text">Since Last Week</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4 mt-3">
+            <div class="card bg-light">
+              <div class="card-body">
+                <h5 class="card-title">Suggestions</h5>
+                <h5>7</h5>
+                <p class="card-text">Since Last Week</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4 mt-3">
+            <div class="card bg-light">
+              <div class="card-body">
+                <h5 class="card-title">Complaints</h5>
+                <h5>1</h5>
+                <p class="card-text">Since Last Week</p>
+              </div>
+            </div>
+          </div>
 
-                  <div class="card-body">
-                      <form action = "/requestsinput" method ="POST" >
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row mt-4">
+        <div class="col-12 col-sm-12">
 
-                      <div class="form-group"
-                        <label for="">Name</label>
-                        <input type = "text" class = "form-control" name="contact"  placeholder = "Name">
-                      </div>
+          <!-- <form action="/uploadProfilePicture"
+       enctype="multipart/form-data" method="POST">
 
-                      <div class="form-group"
-                        <label for="">Contact No.</label>
-                        <input type = "number" class = "form-control" name="contact"  placeholder = "Contact">
-                      </div>
+         <span>Upload Profile Picture:</span>
+         <input type="file" name="mypic" required/> <br>
+         <input type="submit" value="submit">
+     </form> -->
 
-                      <div class="form-group"
-                        <label for="">Address</label>
-                        <input type = "Address" class = "form-control" name="address"  placeholder = "Address">
-                      </div>
+          <div class="card bg-light">
+            <div class="card-header d-flex justify-content-between">Register Hostel Keeper</div>
 
-                      <div class="form-group"
-                        <label for="">ID</label>
-                        <input type = "upload" class = "form-control" name="worktype"  placeholder = "Aadhar ID,Voter ID etc.">
-                      </div>
-          <button class="btn btn-success">Register</button>
+            <div class="card-body">
 
-                        </form>
+              <form action="/hkID"  method="POST">
+                <div class="form-row">
+                  <div class="col">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" placeholder="Name" name="name" required>
                   </div>
-                    <!-- <div class="card bg-light">
-                        <div class="card-header d-flex justify-content-between">Register New Student</div>
-
-                        <div class="card-body">
-                            <form>
-                                <div class="form-row">
-                                  <div class="col">
-                                      <h6>Name*</h6>
-                                    <input type="text" class="form-control" placeholder="HouseKeeper Name" required>
-                                  </div>
-                                  <div class="col">
-                                      <h6>Address*</h6>
-                                    <input type="Address" class="form-control" placeholder="Address" required>
-                                  </div>
-                                </div>
-                                <div class="col">
-                                    <h6>Contact No.*</h6>
-                                  <input type="number" class="form-control" placeholder="contact" required>
-                                </div>
-                              </div>
-
-                                <button type="submit" class="btn btn-primary mt-3">Register</button>
-                              </form>
-                         </div> -->
-                    </div>
-
+                  <div class="col">
+                    <label for="">Contact No.</label>
+                    <input type="number" class="form-control" name="contact" placeholder="Contact" required>
+                  </div>
                 </div>
+                <div class="form-row">
+                  <div class="col">
+                    <label for="">Address</label>
+                    <input type="Address" class="form-control" name="address" placeholder="Address" required>
+                  </div>
+                  <div class="col">
+                    <label for="">ID</label>
+                    <input type="idtype" class="form-control" name="idtype" placeholder="ID detail" required>
+                    <label for="exampleFormControlSelect1">Select ID type</label>
+                    <select name="category" class="form-control" id="exampleFormControlSelect1">
+                      <option>Aadhar ID</option>
+                      <option>PAN number</option>
+                      <option>Passport number</option>
+                    </select>
+                    <!-- <br>
+                    <! <form action="/uploadProfilePicture"
+                 enctype="multipart/form-data" method="POST"> -->
 
+                   <!-- <span>Upload ID</span>
+                   <input type="file" name="hkid" required> <br> -->
+                   <!-- <input type="submit" value="submit"> -->
+                  <br>
+                  </div>
+                </div>
+                <input type="submit" class="btn btn-success" value="Register">
+            </form>
+                <!-- <button type="submit" class="btn btn-success">Register</button> -->
             </div>
-
+          </div>
         </div>
 
+      </div>
 
     </div>
 
+  </div>
+
+
+  </div>
 
 
 
-    <script src="/jquery/dist/jquery.slim.min.js"></script>
-    <script src="/popper.js/dist/umd/popper.min.js"></script>
-    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script src="/jquery/dist/jquery.slim.min.js"></script>
+  <script src="/popper.js/dist/umd/popper.min.js"></script>
+  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
