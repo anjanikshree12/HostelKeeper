@@ -349,7 +349,7 @@ app.get("/userdashboard", function (req, res) {
 
   });
 
-app.get('/feedback', (req, res) => {
+app.get('/feedback', (req, res) {
   Customer.findOne({email : u_username}, function (err, data) {
     if (data !== null) {
       // console.log(data);
